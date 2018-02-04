@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Omrails</title>
+    <title>One Month Rails Project</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,9 +9,38 @@
   </head>
 
   <body>
-  	<%= link_to "Home", root_path %>
-	<%= link_to "About", about_path %>
-	<%= link_to "Contact", contact_path %>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-time">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-time">
+            <%= link_to "About", about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-time">
+            <%= link_to "Contact", contact_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
     <%= yield %>
+
+    <!-- Footer -->
+    <footer class="container">
+      <hr>
+      <center>
+          <p>&copy; <b style="color:#6c757d;">SuryaKanta</b><b style="color:#ee7537;">Bootcamp</b> 2017-2018</p>
+          <p style="color: #793131;">Kode Pengubah Hidup</p>
+      </center>
+    </footer>  
   </body>
 </html>
