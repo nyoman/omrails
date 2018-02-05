@@ -29,6 +29,25 @@
           </li>
         </ul>
       </div>
+      <!-- Register, Log in, Log out -->
+        <div class="navbar-right">
+          <ul class="nav navbar-nav">
+            <% if user_signed_in? %>
+            <!-- if user signed in, show log out link -->
+            <li class="nav-time">
+                <%= link_to "Log out", destroy_user_session_path,  method: :delete, class: "nav-link" %>
+              </li>
+            <% else %>
+            <!-- if use not signed in, show Register and Log in links -->
+              <li class="nav-time">
+                <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+              </li>
+              <li class="nav-time">
+                <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>  
+        </div>
     </nav>
 
     <!-- Flash Messages -->
