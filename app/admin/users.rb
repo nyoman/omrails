@@ -12,4 +12,25 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+# New added
+
+	# To authorize to change user status either to admin or user
+	permit_params :email, :admin
+
+	form do |f|
+		f.semantic_errors
+		f.inputs do 
+			f.input :email
+			f.input :admin 
+		end	
+		f.actions
+	end
+
+	# To limit the column to email and admin in the admin dashboar
+	index do 
+		id_column
+		column :email
+		column :admin 
+		actions
+	end
 end
