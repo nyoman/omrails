@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 
 
 # NEWLY ADDED GEMS
+gem 'activeadmin'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'devise'
